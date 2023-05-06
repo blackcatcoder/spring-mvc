@@ -9,7 +9,14 @@ public class IndexController {
 
   @RequestMapping(value="/", method = RequestMethod.GET)
   public String getHomePage(){
+	System.out.println("home");
     return "home";
+  }
+  
+  @RequestMapping(value="/vip", method = RequestMethod.GET)
+  public String getVipPage(){
+	System.out.println("vip");
+    return "vip";
   }
 
 }
