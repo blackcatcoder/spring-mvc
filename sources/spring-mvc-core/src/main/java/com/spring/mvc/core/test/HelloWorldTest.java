@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class HelloWorldTest {
   public static void main(String[] args) {
     // Call Spring container
-    ApplicationContext context = new ClassPathXmlApplicationContext("/WEB-INF/spring/appServlet/servlet-context.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
     // Request to get SayHello object
     HelloWorld sayHello = (HelloWorld) context.getBean("hello");

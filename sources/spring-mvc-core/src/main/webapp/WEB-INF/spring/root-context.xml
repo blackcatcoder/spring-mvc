@@ -6,6 +6,7 @@
   http://www.springframework.org/schema/context
   http://www.springframework.org/schema/context/spring-context.xsd">
   
-  <!-- dinh nghia bean dung chung o day -->
+  <!-- dinh nghia bean dung chung cho tat ca servlet o day o day -->
+  
   
   </beans>
