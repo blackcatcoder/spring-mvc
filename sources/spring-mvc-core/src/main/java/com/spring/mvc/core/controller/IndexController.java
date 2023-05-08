@@ -22,13 +22,13 @@ public class IndexController {
   @RequestMapping(value="/", method = RequestMethod.GET)
   public String getHomePage(){
 	System.out.println("home");
-    return "index";
+    return "home";
   }
   
   @RequestMapping(value="/index", method = RequestMethod.GET)
   public String getIndexPage(){
 	System.out.println("index");
-    return "index";
+    return "home";
   }
   
   @RequestMapping(value="/vip", method = RequestMethod.GET)

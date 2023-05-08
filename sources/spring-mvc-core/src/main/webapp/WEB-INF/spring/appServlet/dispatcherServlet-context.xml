@@ -15,80 +15,34 @@
   http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd 
   ">
 
-	<mvc:annotation-driven/>
+
     <context:annotation-config />
 	<context:component-scan base-package="com.spring.mvc.core" />
+	<mvc:annotation-driven />
 
-
-	<!-- this is default view of spring mvc web -->
-	
+	<!-- 
+	this is default view of spring mvc web 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-
-	<!-- spring web mvc -->
-	<!--  
+	-->
+	<!-- config spring to use thymeleaf -->
 	<bean id="viewResolver" class="org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".html" />
 		<property name="cacheable" value="false" />
 	</bean>
-
 	<bean id="engine" class="org.thymeleaf.spring6.SpringTemplateEngine">
 		<property name="templateResolver" ref="viewResolver" />
 	</bean>
-
 	<bean class="org.thymeleaf.spring6.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="engine" />
 	</bean>
 	
-	<bean id="hello" class="com.spring.mvc.core.beans.HelloWorld"></bean>
-	-->
-
 
 
 	
-	
-	
-	
-	<!-- spring web flow 
-	
-	
-	<wf:flow-executor id="flowExecutor" flow-registry="flowRegistry" />
-	
-	<wf:flow-registry id="flowRegistry" base-path="/WEB-INF/views/flows"
-		flow-builder-services="flowBuilderServices">
-		<wf:flow-location-pattern value="/**/*-flows.xml" />
-	</wf:flow-registry>
-	
-	<wf:flow-builder-services id="flowBuilderServices"
-		view-factory-creator="viewFactoryCreator"/>
-	-->
-	
-	<!-- flow id: booking 
-	if you use base path -> flow id is directory to file
-	if you do not use base path -> flow name become flow id
-	-->
-	
-	
-	<!-- spring mvc config to call spring web flow 
-	
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
-		<property name="flowExecutor" ref="flowExecutor" />
-	</bean>
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-		<property name="flowRegistry" ref="flowRegistry" />
-		<property name="order" value="0"/>
-	</bean>
-	<bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
-		<property name="viewResolvers" ref="viewResolver" />
-		<property name="useSpringBeanBinding" value="true" />
-	</bean>
-	
-	
-	-->
 
 </beans>
